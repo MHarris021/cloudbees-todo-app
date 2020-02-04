@@ -12,4 +12,5 @@ include 'cloudbees-todo-web-application'
 include 'cloudbees-todo-config-service'
 include 'cloudbees-todo-discovery-service'
 include 'cloudbees-todo-web-ui'
+include 'cloudbees-todo-gateway-service'
 

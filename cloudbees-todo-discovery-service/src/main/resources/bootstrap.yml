@@ -12,5 +12,5 @@ spring:
     name: todo-discover-service
   cloud:
     config:
-      name: todo-service-discovery
+      name: todo-discovery-service
       uri: http://localhost:8888

@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: todo-gateway-service
+      discovery:
+        service-id: todo-config-service
+        enabled: true
