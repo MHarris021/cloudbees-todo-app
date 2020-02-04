@@ -10,3 +10,7 @@ eureka:
 spring:
   application:
     name: todo-discover-service
+  cloud:
+    config:
+      name: todo-service-discovery
+      uri: http://localhost:8888

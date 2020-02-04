@@ -4,7 +4,7 @@ spring:
       server:
         git:
           uri: https://github.com/MHarris021/cloudbees-todo-app.git
-          basedir: configurations
+          search-paths: configurations
 management:
   endpoint:
     shutdown:
@@ -13,3 +13,7 @@ management:
       enabled: true
     restart:
       enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'

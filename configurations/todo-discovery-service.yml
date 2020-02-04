@@ -1,0 +1,19 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: todo-discovery-service
+logging:
+  level:
+    com:
+      netflix:
+        eureka: ON
+        discovery: ON
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka/
