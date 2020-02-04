@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      name: todo-gateway-service
+      name: todo-rest-service
       discovery:
         service-id: todo-config-service
         enabled: true

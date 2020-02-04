@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: todo-rest-service
+server:
+  port: 8085
