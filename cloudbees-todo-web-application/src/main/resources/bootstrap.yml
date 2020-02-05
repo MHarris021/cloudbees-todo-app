@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      name: todo-web-application
+      discovery:
+        service-id: todo-config-service
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8082/eureka/
