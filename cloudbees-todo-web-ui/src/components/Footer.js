@@ -1,22 +1,10 @@
 import React from 'react'
-import {FilterLink} from '../containers'
+import { Link } from 'react-router-dom'
 
-const Footer = () => (
-    <p>
-        Show:
-        {" "}
-        <FilterLink filter="SHOW_ALL">
-            All
-        </FilterLink>
-        {", "}
-        <FilterLink filter="SHOW_ACTIVE">
-            Active
-        </FilterLink>
-        {", "}
-        <FilterLink filter="SHOW_COMPLETED">
-            Completed
-        </FilterLink>
-    </p>
-);
-
-export default Footer
+export default (props) => (
+    <div>
+        <Link to='/'>All</Link>
+        <Link to='/active'>Active</Link>
+        <Link to='/completed'>Completed</Link>
+    </div>
+)

@@ -1,26 +1,40 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Todo from './Todo'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {fetchTodos, toggleTodo, deleteTodo, getVisibleTodos} from '../reducers/todo'
 
-const TodoList = ({ todos, onTodoClick }) => (
-    <ul>
-        {todos.map(todo =>
-            <Todo
-                key={todo.id}
-                {...todo}
-                onClick={() => onTodoClick(todo.id)}
-            />
-        )}
-    </ul>
-);
+const TodoItem = ({id, name, isComplete, toggleTodo, deleteTodo}) => (
+    <li>
+    <span className='delete-item'>
+      <button onClick={() => deleteTodo(id)}>X</button>
+    </span>
+        <input type="checkbox"
+               checked={isComplete}
+               onChange={() => toggleTodo(id)} />
+        {name}
+    </li>
+)
 
-TodoList.propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        completed: PropTypes.bool.isRequired,
-        text: PropTypes.string.isRequired
-    }).isRequired).isRequired,
-    onTodoClick: PropTypes.func.isRequired
-};
+class TodoList extends Component {
+    componentDidMount() {
+        this.props.fetchTodos()
+    }
 
-export default TodoList
+    render() {
+        return (
+            <div className="Todo-List">
+                <ul>
+                    {this.props.todos.map(todo =>
+                        <TodoItem key={todo.id}
+                                  toggleTodo={this.props.toggleTodo}
+                                  deleteTodo={this.props.deleteTodo}
+                                  {...todo} />)}
+                </ul>
+            </div>
+        )
+    }
+}
+
+export default connect(
+    (state, ownProps) => ({todos: getVisibleTodos(state.todo.todos, ownProps.filter)}),
+    {fetchTodos, toggleTodo, deleteTodo}
+)(TodoList)
