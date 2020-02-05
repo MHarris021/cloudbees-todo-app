@@ -5,7 +5,7 @@ const Message = ({message}) => (
     message
         ? <span className='message'>{message}</span>
         : null
-)
+);
 
 export default connect(
     (state) => ({message: state.message})

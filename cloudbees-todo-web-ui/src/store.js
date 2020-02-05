@@ -7,7 +7,7 @@ import messageReducer from './reducers/messages'
 const reducer = combineReducers({
     todo: todoReducer,
     message: messageReducer
-})
+});
 
 export default createStore(
     reducer,

@@ -12,7 +12,7 @@ const TodoItem = ({id, text, completed, toggleTodo, deleteTodo}) => (
                onChange={() => toggleTodo(id)} />
         {text}
     </li>
-)
+);
 
 class TodoList extends Component {
     componentDidMount() {
