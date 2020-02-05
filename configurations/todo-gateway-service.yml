@@ -6,18 +6,18 @@ server:
 zuul:
   routes:
     todo-rest-service:
-      path: /todo-rest-service
+      path: /todo-rest-service/**
       sensitive-headers:
       - Set-Cookie
       - Authorization
     todo-discovery-service:
-      path: /todo-discovery-service
+      path: /todo-discovery-service/**
       sensitive-headers:
       - Set-Cookie
       - Authorization
-      url: http://localhost:8082
+      #url: http://localhost:8082
     todo-web-application:
-      path: /*
+      path: /**
       sensitive-headers:
       - Set-Cookie
       - Authorization
