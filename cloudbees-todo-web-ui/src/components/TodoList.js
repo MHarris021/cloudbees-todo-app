@@ -2,15 +2,15 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {fetchTodos, toggleTodo, deleteTodo, getVisibleTodos} from '../reducers/todo'
 
-const TodoItem = ({id, name, isComplete, toggleTodo, deleteTodo}) => (
+const TodoItem = ({id, text, completed, toggleTodo, deleteTodo}) => (
     <li>
     <span className='delete-item'>
       <button onClick={() => deleteTodo(id)}>X</button>
     </span>
         <input type="checkbox"
-               checked={isComplete}
+               checked={completed}
                onChange={() => toggleTodo(id)} />
-        {name}
+        {text}
     </li>
 )
 

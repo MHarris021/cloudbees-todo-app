@@ -9,7 +9,7 @@ public interface TodoService {
 
     Todo findTodoById(String id);
 
-    Todo createTodo(String text);
+    Todo createTodo(Todo todo);
 
     List<Todo> findAllTodos();
 

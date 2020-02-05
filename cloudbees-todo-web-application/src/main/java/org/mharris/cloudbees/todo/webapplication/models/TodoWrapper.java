@@ -4,16 +4,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import java.math.BigInteger;
+import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Todo {
+public class TodoWrapper {
 
-    public Todo() {
+    @JsonProperty(value = "todos")
+    private List<Todo> todos;
+
+    public TodoWrapper(List<Todo> todos) {
+        this.todos = todos;
     }
-
-    private String id;
-    private String text;
-    private boolean completed;
 }

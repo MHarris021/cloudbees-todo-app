@@ -7,6 +7,10 @@ import org.springframework.data.mongodb.core.mapping.Document
 class Todo {
     String id
     String text
+    boolean completed
+
+    Todo() {
+    }
 
     Todo(String text) {
         this.text = text

@@ -5,14 +5,14 @@ export const getTodos = () => {
         .then(res => res.json())
 }
 
-export const createTodo = (name) => {
+export const createTodo = (text) => {
     return fetch(baseUrl, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name: name, isComplete: false})
+        body: JSON.stringify({text: text, completed: false})
     })
         .then(res => res.json())
 }

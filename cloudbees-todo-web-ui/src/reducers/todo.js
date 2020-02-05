@@ -38,7 +38,7 @@ export const toggleTodo = (id) => {
         dispatch(showMessage('Saving todo update'))
         const {todos} = getState().todo
         const todo = todos.find(t => t.id === id)
-        const toggled = {...todo, isComplete: !todo.isComplete}
+        const toggled = {...todo, completed: !todo.completed}
         updateTodo(toggled)
             .then(res => dispatch(replaceTodo(res)))
     }
@@ -55,9 +55,9 @@ export const deleteTodo = (id) => {
 export const getVisibleTodos = (todos, filter) => {
     switch(filter) {
         case 'active':
-            return todos.filter(t => !t.isComplete)
+            return todos.filter(t => !t.completed)
         case 'completed':
-            return todos.filter(t => t.isComplete)
+            return todos.filter(t => t.completed)
         default:
             return todos
     }
