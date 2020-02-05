@@ -12,12 +12,12 @@ zuul:
       - Authorization
     todo-discovery-service:
       path: /todo-discovery-service
-        sensitive-headers:
-        - Set-Cookie
-        - Authorization
+      sensitive-headers:
+      - Set-Cookie
+      - Authorization
         url: http://localhost:8082
     todo-web-application:
       path: /*
-        sensitive-headers:
-        - Set-Cookie
-        - Authorization
+      sensitive-headers:
+      - Set-Cookie
+      - Authorization
