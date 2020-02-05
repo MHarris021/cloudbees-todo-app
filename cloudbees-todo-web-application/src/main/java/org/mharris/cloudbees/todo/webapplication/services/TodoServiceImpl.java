@@ -18,13 +18,15 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public Todo findTodoById(BigInteger id) {
-        return null;
+    public Todo findTodoById(String id) {
+        return todoRestServiceClient.findTodoById(id).getContent();
     }
 
     @Override
     public Todo createTodo(String text) {
-        return null;
+        Todo todo = new Todo();
+        todo.setText(text);
+        return todoRestServiceClient.saveTodo(todo).getContent();
     }
 
     @Override
@@ -33,17 +35,13 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public Todo updateTodo(Todo todo) {
-        return null;
+    public Todo updateTodo(String id, Todo todo) {
+        return todoRestServiceClient.updateTodo(id, todo).getContent();
     }
 
     @Override
-    public void deleteTodo(Todo todo) {
-
+    public void deleteTodo(String id) {
+        todoRestServiceClient.deleteTodo(id);
     }
 
-    @Override
-    public long countTodos() {
-        return 0;
-    }
 }

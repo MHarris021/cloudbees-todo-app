@@ -7,16 +7,15 @@ import java.util.List;
 
 public interface TodoService {
 
-    Todo findTodoById(BigInteger id);
+    Todo findTodoById(String id);
 
     Todo createTodo(String text);
 
     List<Todo> findAllTodos();
 
-    Todo updateTodo(Todo todo);
+    Todo updateTodo(String id, Todo todo);
 
-    void deleteTodo(Todo todo);
+    void deleteTodo(String id);
 
-    long countTodos();
 
 }

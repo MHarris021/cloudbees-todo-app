@@ -5,6 +5,10 @@ import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
 class Todo {
-    BigInteger id
+    String id
     String text
+
+    Todo(String text) {
+        this.text = text
+    }
 }
