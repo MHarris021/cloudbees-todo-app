@@ -17,7 +17,7 @@ zuul:
       - Authorization
       url: http://localhost:8082
     todo-web-application:
-      path: /
+      path: /**
       sensitive-headers:
       - Set-Cookie
       - Authorization
